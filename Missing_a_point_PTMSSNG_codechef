@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+#define ll long long
+#define endl "\n"
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    vector <ll> vx;
+	    vector <ll> vy;
+	    ll n,x,y;
+	    cin>>n;
+	    
+	    for(ll i=0 ;i<4*n-1 ;i++)
+	    {
+	        ll a,b;
+	        cin>>a>>b;
+	        vx.push_back(a);
+	        vy.push_back(b);
+	    }
+	    sort(vx.begin(),vx.end());
+	    sort(vy.begin(),vy.end());
+	    
+	    for(ll i=0 ;i<4*n-1 ;i++)
+	    {
+	        ll count=1;
+	        while(vx[i+1]==vx[i])
+	        {
+	            count++;
+	            i++;
+	        }
+	        /*cout<<vx[i]<<"="<<count<<" ";*/
+	        if(count%2!=0)
+	        {x=vx[i];break;}
+	        
+	        
+	    }
+	    for(ll i=0 ;i<4*n-1 ;i++)
+	    {
+	        ll count=1;
+	        while(vy[i+1]==vy[i])
+	        {
+	            count++;
+	            i++;
+	        }
+	        /*cout<<vx[i]<<"="<<count<<" ";*/
+	        if(count%2!=0)
+	        {y=vy[i];break;}
+	        
+	        
+	    }
+	    cout<<x<<" "<<y<<endl;
+	
+	
+	}
+	return 0;
+}
